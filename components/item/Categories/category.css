@@ -1,0 +1,27 @@
+.category {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.category-map {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.category-map h2 {
+    /* background-color: #EAEEF1; */
+    box-shadow: 1px 5px 15px #0000002d;
+    text-align: center;
+    padding: 1rem 1rem;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    border-radius: 16px;
+    text-transform: capitalize;
+}
