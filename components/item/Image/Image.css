@@ -1,0 +1,23 @@
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+}
+
+.slide.active {
+    display: block;
+}
+
+img {
+    /* width: 50%; */
+    height: auto;
+    border: 1 solid black;
+    position: relative;
+    top: -0rem;
+}
