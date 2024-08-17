@@ -21,8 +21,8 @@ export default function Categories() {
       <h1>Categories</h1>
       {category.length > 0 ? (
         <div className='category-map'>
-          {category.map((cat, index) => (
-            <div key={index} className='category-item'>
+          {category.map((cat) => (
+            <div key={cat.id} className='category-item'>
               <span>{cat.name}</span>
               <img src={cat.image} alt={cat.name} />
             </div>

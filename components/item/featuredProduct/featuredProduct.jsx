@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import styles from './featuredProduct.css';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const featuredProduct = [
   {
@@ -30,7 +31,7 @@ export default function FeaturedProduct() {
       <div className='top'>
         <h1>Featured Product</h1>
         <div>
-          <span>View all products</span>
+          <Link href={'/product'}>View all products</Link>
           <FaArrowRightLong />
         </div>
       </div>
