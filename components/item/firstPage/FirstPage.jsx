@@ -1,4 +1,5 @@
 import Categories from '../Categories/Categories';
+import FeaturedProduct from '../featuredProduct/featuredProduct';
 import Slideshow from '../Image/Image';
 import './firstPage.css';
 
@@ -17,9 +18,9 @@ export default function MainPage() {
           </p>
           <button>Shop Now</button>
         </div>
-        <div>{/* <Slideshow /> */}</div>
       </section>
       <Categories />
+      <FeaturedProduct />
     </>
   );
 }

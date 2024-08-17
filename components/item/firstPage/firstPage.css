@@ -4,7 +4,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: start;
     background-image: url('/banner1.jpg');
     background-position: center;
@@ -13,16 +13,15 @@
 }
 
 .home .leftSide {
-    width: 60%;
     height: 100%;
+    width: 22rem;
     display: flex;
     flex-direction: column;
-
     gap: 1rem;
 }
 
 .home .leftSide h1 {
-    font-size: 4rem;
+    font-size: 3.7rem;
 }
 
 .home .leftSide p {
@@ -31,8 +30,7 @@
 }
 
 .home .leftSide button {
-    /* padding: 1rem; */
-    width: 50%;
+    width: 10rem;
     padding: 10px 12px;
     background-color: var(--primary-color);
     outline: none;
@@ -47,4 +45,34 @@
 .home .leftSide button:hover {
     background-color: transparent;
     color: var(--text-color);
+}
+
+@media (max-width: 769px) and (min-width: 481px) {
+    .home .leftSide h1 {
+        font-size: 3rem;
+    }
+
+    .home .leftSide p {
+        width: 20rem;
+    }
+
+}
+
+@media (max-width: 480px) and (min-width: 0) {
+    .home .leftSide h1 {
+        font-size: 2rem;
+    }
+
+    /* 
+    .home .leftSide p {
+        width: 90%;
+    } */
+
+    .home .leftSide {
+        width: 90vw;
+    }
+
+    .home {
+        padding: 4rem 1rem;
+    }
 }

@@ -7,34 +7,30 @@ export default function Categories() {
   const [category, setCategory] = useState([]);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products/categories')
+    fetch('https://api.escuelajs.co/api/v1/categories')
       .then((res) => res.json())
       .then((json) => {
-        setCategory(json);
-        console.log(json);
+        const limitedCategories = json.slice(0, json.length - 1); // Remove the last category
+        setCategory(limitedCategories);
       })
-      .catch((error) => console.error('Error fetching products:', error));
-    console.log(setCategory);
-    console.log(category);
+      .catch((error) => console.error('Error fetching categories:', error));
   }, []);
+
   return (
-    // <section>
     <div className='category'>
       <h1>Categories</h1>
       {category.length > 0 ? (
         <div className='category-map'>
-          {/* <> */}
-          {category.map((category, index) => (
-            //   <div key={index}>
-            <h2>{category}</h2>
-            //   </div>
+          {category.map((cat, index) => (
+            <div key={index} className='category-item'>
+              <span>{cat.name}</span>
+              <img src={cat.image} alt={cat.name} />
+            </div>
           ))}
-          {/* </> */}
         </div>
       ) : (
-        <p>Loading products...</p>
+        <p>Loading Categories...</p>
       )}
     </div>
-    // </section>
   );
 }

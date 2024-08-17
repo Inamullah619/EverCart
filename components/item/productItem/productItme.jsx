@@ -6,14 +6,25 @@ export default function ProductItem() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products/')
+    fetch('https://api.escuelajs.co/api/v1/products')
       .then((res) => res.json())
       .then((json) => {
-        setProducts(json);
-        console.log(json);
+        // Filter out products without images
+        const filteredProducts = json.filter(
+          (product) => product.images && product.images.length > 0
+        );
+
+        // Remove the last 16 products from the filtered list
+        const limitedProducts = filteredProducts.slice(
+          0,
+          filteredProducts.length - 16
+        );
+
+        setProducts(limitedProducts);
       })
       .catch((error) => console.error('Error fetching products:', error));
   }, []);
+
   return (
     <div>
       {products.length > 0 ? (
@@ -28,7 +39,7 @@ export default function ProductItem() {
                 <span>Price: ${product.price}</span>
                 <p>{product.description}</p>
                 <img
-                  src={product.image}
+                  src={product.images[0]}
                   alt={product.title}
                   style={{ width: '150px' }}
                 />
