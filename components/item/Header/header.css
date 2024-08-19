@@ -16,7 +16,6 @@ header nav {
 
 header h1 {
     color: var(--text-color);
-    /* color: ; */
 }
 
 nav a {
@@ -35,7 +34,6 @@ nav .active::after {
 }
 
 nav a:hover::after {
-
     animation: hover 1s;
 }
 
@@ -47,6 +45,10 @@ nav a::after {
     bottom: 0;
     left: 0;
     background-color: black;
+}
+
+.menuButton {
+    display: none;
 }
 
 @keyframes hover {
@@ -63,5 +65,65 @@ nav a::after {
     100% {
         width: 0%;
         left: 100%;
+    }
+}
+
+@media (max-width: 769px) and (min-width: 0) {
+    header {
+        justify-content: space-between;
+        padding: 10px 3rem;
+    }
+
+    header nav {
+        flex-direction: column;
+        position: absolute;
+        top: 9vh;
+        right: 50vw;
+        width: 50%;
+        transform: translateX(-200%);
+        background-color: white;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transition: 1s;
+    }
+
+
+    header nav.open {
+        max-height: 100vh;
+        transform: translateX(0);
+        transition: 1s;
+
+    }
+
+    .menuButton {
+        display: block;
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        position: relative;
+        transition: transform 0.3s ease;
+    }
+
+    .menuButton .box {
+        width: 100%;
+        height: 4px;
+        background-color: black;
+        margin: 5px 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .menuButton.active .box:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menuButton.active .box:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menuButton.active .box:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
     }
 }

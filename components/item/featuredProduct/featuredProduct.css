@@ -53,11 +53,37 @@
     display: flex;
     overflow: hidden;
     flex-direction: column;
+    /* height: 15rem;
+    height: 15rem; */
 }
 
 .bottom div img {
     width: 100%;
     padding: 1rem;
     height: 100%;
-    transition: .4s;
+    /* transition: .4s; */
+}
+
+
+@media (max-width: 768px) and (min-width: 481px) {
+    .bottom {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 479px) and (min-width: 0px) {
+    .bottom {
+        display: grid;
+        grid-template-columns: repeat(1, 80vw);
+    }
+
+    .top h1 {
+        font-size: 20px;
+    }
+
+    .top a {
+        font-size: 16px;
+        width: 4rem;
+    }
 }

@@ -10,7 +10,7 @@ export default function Categories() {
     fetch('https://api.escuelajs.co/api/v1/categories')
       .then((res) => res.json())
       .then((json) => {
-        const limitedCategories = json.slice(0, json.length - 1); // Remove the last category
+        const limitedCategories = json.slice(0, 4); // Get only the first 4 categories
         setCategory(limitedCategories);
       })
       .catch((error) => console.error('Error fetching categories:', error));

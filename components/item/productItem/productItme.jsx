@@ -15,10 +15,7 @@ export default function ProductItem() {
         );
 
         // Remove the last 16 products from the filtered list
-        const limitedProducts = filteredProducts.slice(
-          0,
-          filteredProducts.length - 16
-        );
+        const limitedProducts = filteredProducts.slice(1, 50);
 
         setProducts(limitedProducts);
       })
@@ -35,6 +32,7 @@ export default function ProductItem() {
                 key={product.id}
                 style={{ listStyleType: 'none', marginBottom: '20px' }}
               >
+                {/* <h1>{product.id}</h1> */}
                 <h2>{product.title}</h2>
                 <span>Price: ${product.price}</span>
                 <p>{product.description}</p>
